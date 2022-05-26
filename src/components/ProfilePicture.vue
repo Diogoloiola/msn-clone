@@ -1,11 +1,11 @@
 <template>
-  <section class="container">
+  <section class="box">
     <img src="@/assets/images/Profile.png" alt="imagem de perfil">
   </section>
 </template>
 
 <style scoped>
-.container {
+.box {
   width: 183px;
   height: 185px;
   border-radius: 10px;
