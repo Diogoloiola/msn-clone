@@ -1,15 +1,24 @@
 <template>
-  <div class="images">
-    <img src="@/assets/images/Icone Messenger.png" alt="logo msn" />
-    <div>
-      <h3 class="title">Windows Live</h3>
-      <p class="subtile">Messenger</p>
-      <p class="subtitle-two mt-2">Iniciando...</p>
+  <div class="box">
+    <div class="box-content">
+      <img src="@/assets/images/Icone Messenger.png" alt="logo msn" />
+      <div>
+        <h3 class="title">Windows Live</h3>
+        <p class="subtile">Messenger</p>
+        <p class="subtitle-two mt-2">Iniciando...</p>
+      </div>
     </div>
   </div>
 </template>
 <style scoped>
-.images {
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-content {
   width: 50%;
   display: flex;
   align-items: center;

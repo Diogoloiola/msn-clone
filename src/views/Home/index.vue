@@ -9,7 +9,10 @@
         <img src="@/assets/images/buttons.png" alt="buttons" />
       </div>
       <div class="content-body">
-        <animation-login></animation-login>
+        <animation-login v-if="data.isAuthorized"></animation-login>
+        <div v-else>
+            <h1>oloa</h1>
+        </div>
       </div>
     </div>
   </section>
@@ -53,9 +56,6 @@
   background-color: #fff;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .title-header {
@@ -71,6 +71,12 @@
 
 <script setup>
 
+import { reactive } from '@vue/reactivity';
 import AnimationLogin from '../../components/AnimationLogin.vue';
+
+
+const data = reactive({
+  isAuthorized: true
+})
 
 </script>
