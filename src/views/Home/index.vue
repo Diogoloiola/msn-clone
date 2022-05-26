@@ -11,7 +11,9 @@
       <div class="content-body">
         <animation-login v-if="data.isAuthorized"></animation-login>
         <div v-else>
-            <h1>oloa</h1>
+          <custom-header></custom-header>
+          <!-- <profile-picture></profile-picture> -->
+          <!-- <custom-form></custom-form> -->
         </div>
       </div>
     </div>
@@ -72,11 +74,13 @@
 <script setup>
 
 import { reactive } from '@vue/reactivity';
-import AnimationLogin from '../../components/AnimationLogin.vue';
-
+import AnimationLogin from '@/components/AnimationLogin.vue';
+import ProfilePicture from "@/components/ProfilePicture.vue"
+// import CustomForm from "./Form.vue"
+import CustomHeader from "./Header.vue"
 
 const data = reactive({
-  isAuthorized: true
+  isAuthorized: false
 })
 
 </script>
