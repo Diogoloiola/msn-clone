@@ -11,7 +11,7 @@
         <img src="@/assets/images/buttons.png" alt="buttons" />
       </div>
       <div class="content-body">
-        <animation-login v-if="data.isAuthorized"></animation-login>
+        <animation-login v-if="data.isLoading"></animation-login>
         <div v-else>
           <custom-header></custom-header>
           <div class="custom-container">
@@ -89,13 +89,18 @@ import AnimationLogin from "@/components/AnimationLogin.vue";
 import ProfilePicture from "@/components/ProfilePicture.vue";
 import CustomForm from "./Form.vue";
 import CustomHeader from "./Header.vue";
+import { onMounted } from "@vue/runtime-core";
 
 const data = reactive({
-  isAuthorized: false,
+  isLoading: true,
 });
 
-async function handleLogin() {
-  data.isAuthorized = !data.isAuthorized;
+onMounted(async () => {
   await new Promise(resolve => setTimeout(resolve, 2000)) // Adicionado sleep de dois segundos
+  data.isLoading = false
+})
+
+async function handleLogin() {
+
 }
 </script>
