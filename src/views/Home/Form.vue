@@ -1,11 +1,17 @@
 <template>
   <section class="box">
-    <form action="">
+    <form @submit.prevent="emit('handleLogin')">
       <div>
-        <custom-input :inputType="'text'" :placeholder="'E-mail'"></custom-input>
+        <custom-input
+          :inputType="'text'"
+          :placeholder="'E-mail'"
+        ></custom-input>
       </div>
       <div class="mt-1">
-        <custom-input :inputType="'password'" :placeholder="'Senha'"></custom-input>
+        <custom-input
+          :inputType="'password'"
+          :placeholder="'Senha'"
+        ></custom-input>
       </div>
       <div class="mt-1">
         <p class="forget-password"><a href="">Esqueceu sua senha?</a></p>
@@ -31,7 +37,7 @@
           <button class="button" type="submit">Entrar</button>
         </div>
         <div>
-          <button class="button ml-1" type="submit">Cancelar</button>
+          <button class="button ml-1">Cancelar</button>
         </div>
       </div>
       <div class="mt-1">
@@ -79,4 +85,6 @@ const data = reactive({
     },
   ],
 });
+
+const emit = defineEmits(["handleLogin"]);
 </script>

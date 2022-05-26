@@ -16,7 +16,7 @@
           <custom-header></custom-header>
           <div class="custom-container">
             <profile-picture></profile-picture>
-            <custom-form></custom-form>
+            <custom-form @handleLogin="handleLogin"></custom-form>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
   align-items: center;
 }
 
-.custom-container{
+.custom-container {
   width: 90%;
   margin: auto;
   display: flex;
@@ -87,10 +87,15 @@
 import { reactive } from "@vue/reactivity";
 import AnimationLogin from "@/components/AnimationLogin.vue";
 import ProfilePicture from "@/components/ProfilePicture.vue";
-import CustomForm from "./Form.vue"
+import CustomForm from "./Form.vue";
 import CustomHeader from "./Header.vue";
 
 const data = reactive({
   isAuthorized: false,
 });
+
+async function handleLogin() {
+  data.isAuthorized = !data.isAuthorized;
+  await new Promise(resolve => setTimeout(resolve, 2000)) // Adicionado sleep de dois segundos
+}
 </script>
