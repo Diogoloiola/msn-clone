@@ -1,7 +1,9 @@
 <template>
   <section class="container">
     <div class="content">
-      <div class="content-header d-flex align-items-center justify-content-between">
+      <div
+        class="content-header d-flex align-items-center justify-content-between"
+      >
         <div class="d-flex">
           <img src="@/assets/images/mini_logo.png" alt="mini logo" />
           <h3 class="title-header ml-1">Windows Live Messenger</h3>
@@ -12,8 +14,10 @@
         <animation-login v-if="data.isAuthorized"></animation-login>
         <div v-else>
           <custom-header></custom-header>
-          <!-- <profile-picture></profile-picture> -->
-          <!-- <custom-form></custom-form> -->
+          <div class="custom-container">
+            <profile-picture></profile-picture>
+            <custom-form></custom-form>
+          </div>
         </div>
       </div>
     </div>
@@ -34,8 +38,16 @@
   align-items: center;
 }
 
+.custom-container{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-around;
+}
+
 .content {
-  width: 50%;
+  width: 40%;
   height: 60%;
 }
 
@@ -72,15 +84,13 @@
 </style>
 
 <script setup>
-
-import { reactive } from '@vue/reactivity';
-import AnimationLogin from '@/components/AnimationLogin.vue';
-import ProfilePicture from "@/components/ProfilePicture.vue"
-// import CustomForm from "./Form.vue"
-import CustomHeader from "./Header.vue"
+import { reactive } from "@vue/reactivity";
+import AnimationLogin from "@/components/AnimationLogin.vue";
+import ProfilePicture from "@/components/ProfilePicture.vue";
+import CustomForm from "./Form.vue"
+import CustomHeader from "./Header.vue";
 
 const data = reactive({
-  isAuthorized: false
-})
-
+  isAuthorized: false,
+});
 </script>
