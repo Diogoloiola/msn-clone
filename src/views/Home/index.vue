@@ -34,33 +34,8 @@
           />
           <div>
             <ul>
-              <li class="mt-2">
-                <img
-                  src="@/assets/images/Débora Pereira.png"
-                  alt=""
-                  width="220"
-                />
-              </li>
-              <li class="mt-2">
-                <img
-                  src="@/assets/images/Débora Pereira.png"
-                  alt=""
-                  width="220"
-                />
-              </li>
-              <li class="mt-2">
-                <img
-                  src="@/assets/images/Débora Pereira.png"
-                  alt=""
-                  width="220"
-                />
-              </li>
-              <li class="mt-2">
-                <img
-                  src="@/assets/images/Débora Pereira.png"
-                  alt=""
-                  width="220"
-                />
+              <li v-for="image in data.images" :key="image.id" class="mt-2">
+                <img :src="image.src" width="220" />
               </li>
             </ul>
           </div>
@@ -102,25 +77,6 @@
   width: 98%;
   margin: auto;
 }
-
-.bg-blue {
-  background: #c7dae8;
-}
-
-.header {
-  height: 40px;
-}
-
-.list {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-between;
-}
-
-.list li {
-  padding: 8px;
-}
-
 .picture {
   width: 90px;
   height: 90px;
@@ -140,5 +96,25 @@ ul {
 
 <script setup>
 import CustomInput from "@/components/CustomInput.vue";
+import { reactive } from "@vue/reactivity";
 import CustomHeader from "./CustomHeader.vue";
+
+const data = reactive({
+  images: [
+    {
+      id: 1,
+      src: "src/assets/images/Débora Pereira.png",
+    },
+    {
+      id: 2,
+      src: "src/assets/images/Débora Pereira.png",
+    },{
+      id: 3,
+      src: "src/assets/images/Débora Pereira.png",
+    },{
+      id: 4,
+      src: "src/assets/images/Débora Pereira.png",
+    }
+  ],
+});
 </script>
