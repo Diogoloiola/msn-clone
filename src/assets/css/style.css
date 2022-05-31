@@ -11,6 +11,9 @@ body,
 .mt-1{
   margin-top: 10px;
 }
+.mt-2{
+  margin-top: 20px;
+}
 .mr-1{
   margin-right: 10px;
 }
@@ -20,6 +23,7 @@ body,
 .ml-2 {
   margin-left: 40px;
 }
+
 .d-flex {
   display: flex;
 }
