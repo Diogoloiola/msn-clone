@@ -12,14 +12,7 @@
     <div class="bg-blue" style="border-top: 1px solid #a7b1b6">
       <div class="container">
         <div style="width: 20%">
-          <ul class="list">
-            <li>Arquivo</li>
-            <li>Contatos</li>
-            <li>Ações</li>
-            <li>Ferramentas</li>
-            <li>Ajuda</li>
-            <li>Plus</li>
-          </ul>
+          <app-list :list="data.list"></app-list>
         </div>
       </div>
     </div>
@@ -90,9 +83,16 @@
       </div>
       <footer class="bg-gray">
         <div class="container" style="width: 100%; height: 320px">
-        <div style="display: flex; height: 200px; align-items: center; margin-left: 30px;">
-          Novidades
-        </div>
+          <div
+            style="
+              display: flex;
+              height: 200px;
+              align-items: center;
+              margin-left: 30px;
+            "
+          >
+            Novidades
+          </div>
           <div
             style="
               width: 100%;
@@ -155,4 +155,36 @@ ul {
 
 <script setup>
 import CustomInput from "@/components/CustomInput.vue";
+import AppList from "../../components/AppList.vue";
+
+import { reactive } from "@vue/reactivity";
+
+const data = reactive({
+  list: [
+    {
+      id: 1,
+      value: "Arquivos",
+    },
+    {
+      id: 2,
+      value: "Contatos",
+    },
+    {
+      id: 3,
+      value: "Ações",
+    },
+    {
+      id: 4,
+      value: "Ferramentas",
+    },
+    {
+      id: 5,
+      value: "Ajuda",
+    },
+    {
+      id: 6,
+      value: "Plus",
+    },
+  ],
+});
 </script>
